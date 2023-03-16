@@ -1,3 +1,96 @@
-* {
+/* * {
     outline: 1px solid rgb(235, 14, 14) !important;
-  }
+  } */
+
+html {
+    box-sizing: border-box;
+    /* background-color: #cadaba; */
+}
+
+.wrapper {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+
+.accordion__container {
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.title-h1 {
+    font-size: 3rem;
+    /* text-align: center; */
+}
+
+.accordion__item {
+    border-bottom: 0.1rem solid black;
+    border-top: 0.1rem solid black;
+}
+
+.input {
+    appearance: none;
+}
+
+.label {
+}
+
+.title__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title__text-mem {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.icon__plus {
+    width: 4%;
+    cursor: pointer;
+    /* overflow: hidden; */
+    /* height: 0; */
+}
+
+.mem-box {
+    display: flex;
+    justify-content: space-around;
+    /* overflow: hidden; */
+    height: 0;
+    transition: 0.7s;
+}
+
+.mem-image {
+    max-width: 80%;
+}
+
+@media (hover:hover){
+    .accordion__container:hover .label
+     {
+        color: rgb(183, 17, 17);
+    }
+    .accordion-item:hover .icon__plus{
+        transform: rotate(45deg);
+        transition: 0.7s;
+    }
+    .label:hover ~ .mem-box {
+        transform: scale(0.9);
+        transition: 0.s;
+    }
+    .mem-box:hover {
+        transform: scale(0.9);
+        transition: 0.s;
+    }
+    .label:hover .icon__plus{
+        transform: rotate(45deg);
+        transition: 0.7s;
+    }
+    .input:hover ~ .mem-box {
+        height: 22rem;
+    }
+}
+
+.input:checked ~ .mem-box {
+    height: 22rem;
+}
