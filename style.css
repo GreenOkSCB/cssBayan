@@ -1,0 +1,139 @@
+/* * {
+    outline: 1px solid rgb(235, 14, 14) !important;
+  } */
+
+html {
+    box-sizing: border-box;
+    background-color: #cadaba;
+}
+
+.wrapper {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+
+.accordion__container {
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.title-h1 {
+    font-size: 3rem;
+}
+
+.accordion__item {
+    border-bottom: 0.1rem solid black;
+    border-top: 0.1rem solid black;
+}
+
+.input {
+    appearance: none;
+}
+
+.label {
+    display: block;
+    cursor: pointer;
+    color: black;
+}
+
+.title__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title__text-mem {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.icon__plus {
+    width: 4%;
+}
+
+.mem-box {
+    display: flex;
+    justify-content: space-around;
+    height: 0;
+    transition: 0.7s;
+}
+
+.mem-image {
+    max-width: 80%;
+}
+
+@media (hover:hover){
+    .accordion__container:hover .label:hover {
+        color: red;
+    }
+    .label:hover ~ .mem-box {
+        transform: scale(0.9);
+        transition: 1.7s;
+    }
+    .mem-box:hover {
+        transform: scale(0.9);
+        transition: 0.7s;
+    }
+    .label:hover .icon__plus {
+        transform: rotate(45deg);
+        transition: 0.7s;
+    }
+    .input:hover ~ .mem-box {
+        height: 22rem;
+    }
+}
+
+.input:checked ~ .mem-box {
+    height: 22rem;
+}
+
+.input:checked ~ .label {
+    color: red;
+}
+
+.input:checked ~ .label > .title__box > .icon__plus {
+    transform: rotate(45deg);
+    transition: 0.7s;
+}
+
+@media (max-width: 1150px){
+    .title__text-mem {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 950px){
+    .title__text-mem {
+        font-size: 1.32rem;
+    }
+    .input:checked ~ .mem-box {
+        height: 19rem;
+    }
+    .title-h1 {
+        font-size: 2.5rem;
+    }
+}
+@media (max-width: 850px){
+    .title-h1 {
+        font-size: 1.75rem;
+    }
+    .title__text-mem {
+        font-size: 1.25rem;
+    }
+}
+@media (max-width: 710px){
+    .wrapper {
+        max-width: 80%;
+    }
+    .title__text-mem {
+        font-size: 1rem;
+    }
+    .input:checked ~ .mem-box {
+        height: 16rem;
+    }
+}
+@media (max-width: 525px) {
+    .input:checked ~ .mem-box {
+        height: 12rem;
+    }
+}
